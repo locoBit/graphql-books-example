@@ -14,7 +14,7 @@ Object.defineProperty(Author, 'name', {
 fs.readdirSync(__dirname)
   .filter(directory => !directory.includes('.js'))
   .forEach(directory => {
-    Book.options[directory] = require('.' + directory);
+    Author.options[directory] = require('./' + directory);
   });
 
 module.exports = Author;

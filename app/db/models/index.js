@@ -19,6 +19,7 @@ fs
   .forEach((file) => {
     const modelDescription = require('./' + file + '/model');
     const modelFunctions = require('./' + file);
+
     const modelDefinition = _.merge({}, modelDescription, modelFunctions);
     const model = sequelize.define(file.replace('.js', ''), modelDefinition.attributes, modelDefinition.options);
 
