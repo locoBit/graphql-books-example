@@ -13,32 +13,28 @@ const BookModel = {
       type: Sequelize.DATE,
       field: 'updated_at'
     },
-    deletedAt: {
-      type: Sequelize.DATE,
-      field: 'deleted_at'
+    authorId: {
+      type: Sequelize.INTEGER,
+      field: 'author_id',
+      allowNull: false,
+      references: {
+        table: 'authors',
+        key: 'id'
+      }
     }
-    // sessionId: {
-    //   type: Sequelize.INTEGER,
-    //   field: 'session_id',
-    //   allowNull: false
-    // },
-    // deletedAt: {
-    //   type: Sequelize.DATE,
-    //   field: 'deleted_at'
-    // }
   },
   options: {
     tableName: 'books',
     underscored: true,
     paranoid: true,
     classMethods: {
-      // associate: function(models) {
-      //   this.belongsTo(models.Session, {
-      //     foreignKey: 'sessionId',
-      //     targetKey: 'id',
-      //     as: 'Session'
-      //   });
-      // }
+      associate: function(models) {
+        this.belongsTo(models.Author, {
+          foreignKey: 'authorId',
+          targetKey: 'id',
+          as: 'Author'
+        });
+      }
     }
   }
 };
