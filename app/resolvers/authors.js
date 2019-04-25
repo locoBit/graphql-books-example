@@ -12,7 +12,6 @@ const authors = [
 const resolvers = {
   Query: {
     authors: () => {
-      console.log('data');
       return authors;
     },
   },

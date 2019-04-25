@@ -1,20 +1,10 @@
-const books = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
+const {
+  books
+} = require('../controllers/BooksController');
 
 const resolvers = {
   Query: {
-    books: () => {
-      console.log('data');
-      return books;
-    },
+    books
   },
 };
 
