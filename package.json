@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:migrate": "npx sequelize db:migrate --config app/config/config.json --migrations-path app/db/migrations",
+    "db:migrate:undo": "npx sequelize db:migrate:undo --config app/config/config.json --migrations-path app/db/migrations"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +14,10 @@
   "dependencies": {
     "apollo-server": "^2.4.8",
     "graphql": "^14.2.1",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "pg": "^7.10.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^5.7.5",
+    "sequelize-cli": "^5.4.0"
   }
 }
