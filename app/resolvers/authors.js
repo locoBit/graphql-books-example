@@ -1,20 +1,19 @@
-const authors = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
+const {
+  author,
+  authors
+} = require('../controllers/AuthorsController');
+const {
+  booksFromAuthor
+} = require('../controllers/BooksController');
 
 const resolvers = {
   Query: {
-    authors: () => {
-      return authors;
-    },
+    author,
+    authors
   },
+  Author: {
+    books: booksFromAuthor
+  }
 };
 
 module.exports = resolvers;
