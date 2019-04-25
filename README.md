@@ -224,7 +224,7 @@ query {
 }
 ```
 
-Authors response
+Author response
 
 ```js
 {
