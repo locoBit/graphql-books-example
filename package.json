@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:migrate": "npx sequelize db:migrate --config app/config/config.json --migrations-path app/db/migrations",
-    "db:migrate:undo": "npx sequelize db:migrate:undo --config app/config/config.json --migrations-path app/db/migrations"
+    "db:migrate:undo": "npx sequelize db:migrate:undo --config app/config/config.json --migrations-path app/db/migrations",
+    "db:seed": "npx sequelize db:seed:all --config app/config/config.json --seeders-path app/db/seeds",
+    "db:seed:undo": "npx sequelize db:seed:undo:all --config app/config/config.json --seeders-path app/db/seeds"
   },
   "keywords": [],
   "author": "",
