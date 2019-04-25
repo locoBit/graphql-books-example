@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./scripts/postgres:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    labels:
+      container_group: service
+    expose:
+      - "5435"
